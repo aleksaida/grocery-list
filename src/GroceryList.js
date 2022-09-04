@@ -31,10 +31,15 @@ deleteItem () {
     listArray = [];
     this.setState({groceryList: listArray})
 }
+    
+onFormSubmit(e) {
+    e.preventDefault();
+}
 
 render () {
     return (
         <div>
+        <form onSubmit={this.onFormSubmit}>
         <div className="container">
             <input type="text"
             placeholder="What do you want to buy today?"
@@ -54,6 +59,7 @@ render () {
         <div className="container">
             <button onClick={() => this.deleteItem()} className="delete">Delete</button>
         </div>
+        </form>
         </div>
     )
 }
